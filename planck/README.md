@@ -1,36 +1,37 @@
-# JanusVM keymap for the OLKB Planck
+# janusvm's keymap for the OLKB Planck
 
-This keymap is built to satisfy my personal needs, and as such provides:
+The Planck was my first foray into QMK and customizing the layout of a keyboard beyond just rebinding a key or two.
+Over time, as I have uncovered what I really want from a keyboard, this layout has become very sharply tailored to those needs, and as such feature:
 
-* ANSI layout with support for Danish characters (Æ, Ø, Å)
-* Consistency with my keycap set
+* [Colemak-DH](https://colemakmods.github.io/mod-dh) base layout
+* [Home row mods](https://precondition.github.io/home-row-mods)
+* Wide, pseudo-split arrangement of alphas
+* Support for Danish characters (Æ, Ø, Å)
 * Programming-friendly placement of non-alphas that require at most one modifier or layer key to be held to reach
-* A numpad with a large 0 key
-* Emacs-friendly modifier key placement
-* Easy access to my commonly used unicode characters
 * RGB indication of layer status
-* **TODO:** Switching between English and Danish mode, for providing a consistent layout if I have to use a computer set to take ISO Danish input
 
 ## Layers
 
+The layer configuration is based on having the system keyboard set to a US QWERTY layout.
+While this requires a bit of (sometimes awkward) workarounds for typing Danish letters, since I mostly type in English, I don't mind too much.
+
 ### Base
 
-![](https://i.imgur.com/2g3yH0G.png)
+![](img/planck-base-colemak-dh.png)
 
-The base layer is mostly laid out like an ANSI QWERTY keyboard to match the keycaps I got.
-This requires setting the system keyboard to US QWERTY, but since I mostly type in English anyway, I don't mind too much.
+The base layer contains all the alphas except ÆØÅ, arranged in the matrix version [Colemak-DH](https://colemakmods.github.io/mod-dh) layout, with the top right semicolon key replaced with Delete for easier access.
 
-In terms of modifier and layer keys placement,
+Instead of having an outer edge of modifier keys, the layout is "split" in half down the middle and moved one column outwards.
+This gives an ever-so-slightly more ergonomic typing experience — not quite on the level of a true, split keyboard, when it comes to shoulder position, but the reduced usage of the pinkies is quite noticable.
 
-* A combined Ctrl/Esc key (Esc when tapped, Ctrl when held) sits where Caps Lock would usually be, as my Emacs + Evil workflow makes heavy use of both Ctrl and Esc
-* I use both Shift keys when typing, so both are included, and the right Shift doubles as Enter when tapped
-* Alt also features heavily in Emacs bindings, so I included both left and right Alt
-* The Super (Windows) key is placed in the bottom right corner, as I don't use it all that much
-* The Menu key (bottom row, third from left) is included as this key can be used as `M-x` in Emacs.
-On togglable layers, it instead serves as an escape hatch to return to the base layer.
-* Fn can be held with the left hand while using the numpad with the right
-* I practically never use the right Ctrl, and the arrow keys are on HJKL, so the bottom right keys are tap-toggle access keys to unicode character layers
+Modifier keys are placed on the home row on both sides, as [Mod-Tap](https://docs.qmk.fm/#/mod_tap) (dual purpose) keys.
+Letter keys when tapped, modifier keys when held.
+The timing and behaviour of these Mod-Tap keys are tuned differently for each finger; the index and longfinger have shorter `TAPPING_TERM` than the ringfinger and pinky.
 
+The main layer keys, LOWER and RAISE, also serve dual purposes as Space and Backspace, respectively.
+Ditto for the Tab key, which when held activates the Fn layer.
+
+<!--
 ### Lower
 
 ![](https://i.imgur.com/ykOKKgG.png)
@@ -42,7 +43,7 @@ This makes it so that I don't have to use my pinky for Ctrl and thereby shift my
 
 Tab and Backspace are changed to Ctrl+Del and Ctrl+Backspace, respectively, and thus delete a word in the direction of the arrow on the keycap.
 
-### Raise 
+### Raise
 
 ![](https://i.imgur.com/2jBJhEZ.png)
 
@@ -51,8 +52,8 @@ The characters are placed such that:
 
 * Bracket delimiters (`() [] {} <>`) are available at the prime spots for paired keys.
 While most editors automatically insert the closing bracket, I tend to use paired brackets in navigation-related keybindings, so I need opening and closing brackets next to each other.
-* Several symbols (`! @ % & = \`) are at or close to their usual position on an ISO Danish keyboard 
-* Certain symbols that pair up in Emacs and Vim-like keybindings (`^ $`, `# *`, and `= + -`) are placed together 
+* Several symbols (`! @ % & = \`) are at or close to their usual position on an ISO Danish keyboard
+* Certain symbols that pair up in Emacs and Vim-like keybindings (`^ $`, `# *`, and `= + -`) are placed together
 * Æ, Ø, and Å are on their usual keys
 
 Additionally, this layer replaces Backspace with Delete and Tab with Esc, the latter specifically so that I can input Ctrl+Shift+Esc to get the Task Manager on Windows.
@@ -109,3 +110,5 @@ The emoji are placed such that, as much as possible, the emoji of each column ar
 * Meme/injoke stuff 👀 🧠 🅱
 * Symbols 💰 ✨ 💯 🔥
 * Face modifers 💦 💕
+
+-->
