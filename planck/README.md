@@ -31,18 +31,21 @@ The timing and behaviour of these Mod-Tap keys are tuned differently for each fi
 The main layer keys, LOWER and RAISE, also serve dual purposes as Space and Backspace, respectively.
 Ditto for the Tab key, which when held activates the Fn layer.
 
-<!--
 ### Lower
 
-![](https://i.imgur.com/ykOKKgG.png)
+![](img/planck-lower.png)
 
-The lower layer's main feature are the Vim-like arrow keys on HJKL and the number row.
-An additional Super and Alt keys are placed on the left side of the home row for certain keybindings such as Alt+[arrow keys].
-The number row is there for familiarity, and some common Ctrl combinations are put on their respective keys.
-This makes it so that I don't have to use my pinky for Ctrl and thereby shift my other fingers to "wrong" keys to input combinations.
+The lower layer serves three overall purposes: navigation, ÆØÅ, and numbers.
 
-Tab and Backspace are changed to Ctrl+Del and Ctrl+Backspace, respectively, and thus delete a word in the direction of the arrow on the keycap.
+Having the numbers arranged in a 2x5 grid instead of in a single row all the way across the keyboard makes them easier to type in my opinion, as they're reachable one-handed.
 
+Arrow keys are placed in a T-block formation rather than a Vim-like row, as it feels more natural — using HJKL for navigation only makes sense to me if you're stuck with a larger QWERTY keyboard.
+The other navigation keys are positioned such that their relative position makes sense intuitively.
+
+Since the right home row is used for navigation, ÆØÅ keys are placed just below it.
+On a standard Danish QWERTY keyboard, ÆØÅ are all reached with the pinky, which I wanted to avoid.
+
+<!--
 ### Raise
 
 ![](https://i.imgur.com/2jBJhEZ.png)
