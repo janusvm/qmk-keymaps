@@ -45,22 +45,22 @@ The other navigation keys are positioned such that their relative position makes
 Since the right home row is used for navigation, ÆØÅ keys are placed just below it.
 On a standard Danish QWERTY keyboard, ÆØÅ are all reached with the pinky, which I wanted to avoid.
 
-<!--
 ### Raise
 
-![](https://i.imgur.com/2jBJhEZ.png)
+![](img/plack-raise.png)
 
-The Raise layer has standard special characters usually available on a regular keyboard as well as Danish, Shift-able letters Æ, Ø, and Å.
-The characters are placed such that:
+The Raise layer has standard special characters usually available on a regular keyboard, placed suck that:
 
 * Bracket delimiters (`() [] {} <>`) are available at the prime spots for paired keys.
 While most editors automatically insert the closing bracket, I tend to use paired brackets in navigation-related keybindings, so I need opening and closing brackets next to each other.
 * Several symbols (`! @ % & = \`) are at or close to their usual position on an ISO Danish keyboard
 * Certain symbols that pair up in Emacs and Vim-like keybindings (`^ $`, `# *`, and `= + -`) are placed together
-* Æ, Ø, and Å are on their usual keys
 
-Additionally, this layer replaces Backspace with Delete and Tab with Esc, the latter specifically so that I can input Ctrl+Shift+Esc to get the Task Manager on Windows.
+Additionally, this layer has a Right Alt key, since I use this key for the Compose key in Linux and WinCompose.
+While there are no home row mods on this layer (technical limitation), I don't think I ever use the left Alt and Ctrl keys anyway.
+It seems to work to hold down the mod key before the Raise key, for keystroke combinations involving modifiers and symbols.
 
+<!--
 ### Adjust
 
 ![](https://i.imgur.com/oe4sd2Y.png)
