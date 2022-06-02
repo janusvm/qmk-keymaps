@@ -10,12 +10,10 @@ Over time, as I have uncovered what I really want from a keyboard, this layout h
 * Programming-friendly placement of non-alphas that require at most one modifier or layer key to be held to reach
 * RGB indication of layer status
 
-## Layers
-
 The layer configuration is based on having the system keyboard set to a US QWERTY layout.
 While this requires a bit of (sometimes awkward) workarounds for typing Danish letters, since I mostly type in English, I don't mind too much.
 
-### Base
+## Base
 
 ![](img/planck-base-colemak-dh.png)
 
@@ -31,11 +29,11 @@ The timing and behaviour of these Mod-Tap keys are tuned differently for each fi
 The main layer keys, LOWER and RAISE, also serve dual purposes as Space and Backspace, respectively.
 Ditto for the Tab key, which when held activates the Fn layer.
 
-### Lower
+## Lower
 
 ![](img/planck-lower.png)
 
-The lower layer serves three overall purposes: navigation, ÆØÅ, and numbers.
+The Lower layer serves three overall purposes: navigation, ÆØÅ, and numbers.
 
 Having the numbers arranged in a 2x5 grid instead of in a single row all the way across the keyboard makes them easier to type in my opinion, as they're reachable one-handed.
 
@@ -45,11 +43,11 @@ The other navigation keys are positioned such that their relative position makes
 Since the right home row is used for navigation, ÆØÅ keys are placed just below it.
 On a standard Danish QWERTY keyboard, ÆØÅ are all reached with the pinky, which I wanted to avoid.
 
-### Raise
+## Raise
 
-![](img/plack-raise.png)
+![](img/planck-raise.png)
 
-The Raise layer has standard special characters usually available on a regular keyboard, placed suck that:
+The Raise layer has standard special characters usually available on a regular keyboard, placed such that:
 
 * Bracket delimiters (`() [] {} <>`) are available at the prime spots for paired keys.
 While most editors automatically insert the closing bracket, I tend to use paired brackets in navigation-related keybindings, so I need opening and closing brackets next to each other.
@@ -60,16 +58,21 @@ Additionally, this layer has a Right Alt key, since I use this key for the Compo
 While there are no home row mods on this layer (technical limitation), I don't think I ever use the left Alt and Ctrl keys anyway.
 It seems to work to hold down the mod key before the Raise key, for keystroke combinations involving modifiers and symbols.
 
+## Adjust
+
+![](img/planck-adjust.png)
+
+The Adjust layer, reached by holding Lower and Raise simoultaneously, has mouse keys, keys for adjusting settings, and some media keys:
+* The Qwerty and Colemak-DH button toggles the persistent base layer between QWERTY and Colemak-DH layout.
+This is basically deprecated functionality, as I never use QWERTY anymore.
+* The Brightness and Volume buttons adjust the computer's system settings for these things.
+* The Toggle RGB and Toggle Audio toggle these features on the keyboard.
+* The other special keys are Mail, Calculator, Browser, and File Explorer.
+* RESET and DEBUG are for developing the keymap.
+* The UC keys are for setting the unicode input mode, which is dependent on the OS and can't be automatically detected, sadly. On Windows, this uses WinCompose for inputting characters.
+* The mouse keys are placed such that they match the arrow keys on the Lower layer, with mouse button 1-4 placed where it makes sense.
+
 <!--
-### Adjust
-
-![](https://i.imgur.com/oe4sd2Y.png)
-
-Keyboard settings and mouse keys layer, reached by holding Lower and Raise simoultaneously.
-This layer also has some additional commands like Print Screen, Caps Lock, and media control keys.
-
-**TODO:** the EN Mode and DA Mode keys currently do nothing.
-
 ### Fn/Numpad
 
 ![](https://i.imgur.com/P2Yquam.png)
