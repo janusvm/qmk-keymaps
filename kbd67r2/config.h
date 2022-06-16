@@ -2,6 +2,8 @@
 
 #define ONESHOT_TAP_TOGGLE 2
 #define ONESHOT_TIMEOUT 2000
+#define TAPPING_TERM 150
+#define HOLD_ON_OTHER_KEY_PRESS
 
 #define LAYOUT_65_iso_split_space( \
     K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C,      K0E, K0F, \
