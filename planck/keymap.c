@@ -32,32 +32,6 @@ enum planck_keycodes {
 #define KC_FNTAB   LT(_NUMPAD, KC_TAB)
 #define KC_CSP     TG(_CSP)
 
-// Home row mod layouts
-#define HRM_KEYMAP_kc(                                          \
-    k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0a, k0b, \
-    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1a, k1b, \
-    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2a, k2b, \
-    k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k3a, k3b \
-) \
-LAYOUT_ortho_4x12( \
-    KC_##k00,        KC_##k01,        KC_##k02,        KC_##k03,        KC_##k04, KC_##k05, KC_##k06, KC_##k07, KC_##k08,        KC_##k09,        KC_##k0a,        KC_##k0b, \
-    GUI_T(KC_##k10), ALT_T(KC_##k11), CTL_T(KC_##k12), SFT_T(KC_##k13), KC_##k14, KC_##k15, KC_##k16, KC_##k17, SFT_T(KC_##k18), CTL_T(KC_##k19), ALT_T(KC_##k1a), GUI_T(KC_##k1b), \
-    KC_##k20,        KC_##k21,        KC_##k22,        KC_##k23,        KC_##k24, KC_##k25, KC_##k26, KC_##k27, KC_##k28,        KC_##k29,        KC_##k2a,        KC_##k2b, \
-    KC_##k30,        KC_##k31,        KC_##k32,        KC_##k33,        KC_##k34, KC_##k35, KC_##k36, KC_##k37, KC_##k38,        KC_##k39,        KC_##k3a,        KC_##k3b \
-)
-#define HRM_L_KEYMAP_kc( \
-    k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k0a, k0b, \
-    k10, k11, k12, k13, k14, k15, k16, k17, k18, k19, k1a, k1b, \
-    k20, k21, k22, k23, k24, k25, k26, k27, k28, k29, k2a, k2b, \
-    k30, k31, k32, k33, k34, k35, k36, k37, k38, k39, k3a, k3b \
-) \
-LAYOUT_ortho_4x12( \
-    KC_##k00,        KC_##k01,        KC_##k02,        KC_##k03,        KC_##k04, KC_##k05, KC_##k06, KC_##k07, KC_##k08, KC_##k09, KC_##k0a, KC_##k0b, \
-    GUI_T(KC_##k10), ALT_T(KC_##k11), CTL_T(KC_##k12), SFT_T(KC_##k13), KC_##k14, KC_##k15, KC_##k16, KC_##k17, KC_##k18, KC_##k19, KC_##k1a, KC_##k1b, \
-    KC_##k20,        KC_##k21,        KC_##k22,        KC_##k23,        KC_##k24, KC_##k25, KC_##k26, KC_##k27, KC_##k28, KC_##k29, KC_##k2a, KC_##k2b, \
-    KC_##k30,        KC_##k31,        KC_##k32,        KC_##k33,        KC_##k34, KC_##k35, KC_##k36, KC_##k37, KC_##k38, KC_##k39, KC_##k3a, KC_##k3b \
-)
-
 // Other mod-tap keys
 #define KC_SENT  RSFT_T(KC_ENT)
 
@@ -112,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // RAISE layer, for special characters
-    [_RAISE] = KC_KEYMAP(
+    [_RAISE] = KEYMAP_kc(
         EXLM, AT,   LCBR, RCBR, PERC, _,   _,   AMPR, LT,   GT,   DQUO, EQL,
         CIRC, DLR,  LBRC, RBRC, HASH, _,   _,   ASTR, LPRN, RPRN, QUOT, PLUS,
         BSLS, PIPE, GRV,  TILD, _,    _,   _,   _,    UNDS, SCLN, COLN, MINS,
@@ -120,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     // Adjust layer, with mouse keys and board settings
-    [_ADJUST] = KEYMAP(
+    [_ADJUST] = LAYOUT_ortho_4x12(
         QWERTY,     ___X___, KC_BRIU, KC_VOLU, RGB_TOG, RESET,   UC_M_WC, ___X___, KC_BTN1, KC_MS_U, KC_BTN2, ___X___,
         COLEMAK_DH, ___X___, KC_BRID, KC_VOLD, AU_TOG,  DEBUG,   UC_M_MA, KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_R, KC_BTN5,
         KC_MAIL,    KC_CALC, KC_WHOM, KC_MYCM, ___X___, ___X___, UC_M_LN, ___X___, ___X___, ___X___, ___X___, ___X___,
@@ -161,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ),
 
     // Clip Studio Paint layer, for quick access to my most used tools and shortcuts
-    [_CSP] = KEYMAP(
+    [_CSP] = LAYOUT_ortho_4x12(
         C(KC_EQL),  C(KC_0),     KC_MINS,     KC_QUOT,     TD(CSP_M), KC_T,    KC_U,    KC_W,    KC_J,    KC_R,    ___X___, ___X___,
         C(KC_MINS), ALT_T(KC_3), CTL_T(KC_2), SFT_T(KC_1), KC_G,      KC_P,    KC_B,    KC_E,    KC_I,    KC_H,    ___X___, ___X___,
         C(KC_Z),    TD(X_CX),    TD(C_CC),    TD(CSP_F),   TD(CSP_K), KC_COMM, KC_DOT,  KC_0,    KC_Y,    KC_SLSH, ___X___, ___X___,
@@ -223,17 +197,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // Set per key tapping term to differentiate between strong and weak fingers
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case KC_LOWER:
-        case KC_RAISE:
-            return 150;
         case GUI_T(KC_A):
         case GUI_T(KC_O):
-            return 250;
+            return TAPPING_TERM + 100;
         case ALT_T(KC_R):
         case ALT_T(KC_I):
-            return 200;
+            return TAPPING_TERM + 50;
         default:
             return TAPPING_TERM;
+    }
+}
+
+// Enable TAPPING_FORCE_HOLD for mod-tap keys
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_LOWER:
+        case KC_RAISE:
+        case KC_FNTAB:
+            return false;
+        default:
+            return true;
     }
 }
 
