@@ -1,5 +1,6 @@
 # janusvm's keymap for the OLKB Planck
 
+<!--
 The Planck was my first foray into QMK and customizing the layout of a keyboard beyond just rebinding a key or two.
 Over time, as I have uncovered what I really want from a keyboard, this layout has become very sharply tailored to those needs, and as such feature:
 
@@ -71,50 +72,5 @@ This is basically deprecated functionality, as I never use QWERTY anymore.
 * RESET and DEBUG are for developing the keymap.
 * The UC keys are for setting the unicode input mode, which is dependent on the OS and can't be automatically detected, sadly. On Windows, this uses WinCompose for inputting characters.
 * The mouse keys are placed such that they match the arrow keys on the Lower layer, with mouse button 1-4 placed where it makes sense.
-
-<!--
-### Fn/Numpad
-
-![](https://i.imgur.com/P2Yquam.png)
-
-Tap-toggle layer with F-keys and a numpad positioned such the 0 sits on the 2u space bar.
-
-### Greek
-
-![](https://i.imgur.com/pCBLx9V.png)
-
-This layer simply has the Greek alphabet as Shift-able letters, mapped to their logical Latin equivalent.
-
-### Symbols
-
-![](https://i.imgur.com/g8861fn.png)
-
-This layer features my most used special unicode characters.
-They are placed such that most of them make sense mnemonically, i.e.
-
-* `€ ® ™ ¥ ∞ √ ∇ © £ – —` have names that start with the letter of the key they occupy
-* `∪ ∩ ∂ ∫ ¬ •` look a bit like the symbol of their key (some more than others)
-* `² ≠ ° ← ↓ ↑ → × ∅` look a bit like symbols related to a secondary function of their key
-
-### Emoji
-
-![](https://i.imgur.com/ov1YNio.png)
-
-This layer features quick access to my favourite unicode emoji, mainly so I can avoid using the built-in emoji pickers of Windows, Facebook, and Twitter (as they are either cumbersome or really slow to use).
-While all modifier keys from the base layers have been assigned emoji, Space, Backspace, Lower, and Raise are kept for easier entry of multiple emoji.
-
-The emoji are placed such that, as much as possible, the emoji of each column are somewhat related to each other:
-
-* Happy faces 😄 😅 😂 😊
-* Affectionate faces 😳 😍 🤪 🥺
-* Sad faces 😩 😭 😔
-* Flirty faces 😉 😘 😜 😏
-* Sarcastic/teasing faces 🙄 🤨 😒
-* Other faces 🤔 🙃 💩
-* Status symbols ✅ ⚠ ⛔
-* Hands 👉 👌 👏 👍 (🙏)
-* Meme/injoke stuff 👀 🧠 🅱
-* Symbols 💰 ✨ 💯 🔥
-* Face modifers 💦 💕
 
 -->
