@@ -7,13 +7,15 @@ enum planck_layers {
     _LOWER,
     _RAISE,
     _ADJUST,
-    _FN
+    _FN,
+    _ACCENTS
 };
 
-// Layer tap keys
+// Layer keys
 #define FN_COMM    LT(_FN, KC_COMM)
 #define LOWER_SPC  LT(_LOWER, KC_SPC)
 #define RAISE_BSPC LT(_RAISE, KC_BSPC)
+#define ACCENTS    OSL(_ACCENTS)
 
 // Mod tap keys
 #define G_Z    GUI_T(KC_Z)
@@ -74,31 +76,41 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN] = LAYOUT(
         KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, KC_RALT, KC_RGUI,
+        KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ACCENTS, _______, KC_RALT, KC_RGUI,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
+    ),
+
+    // ACCENTS layer, for accented vowels
+    [_ACCENTS] = LAYOUT(
+        KC_GRV_A, KC_DIA_A, KC_CIR_A, KC_TIL_A, KC_ACU_A, XXXXXXX, XXXXXXX, KC_GRV_O, KC_DIA_O, KC_CIR_O, KC_TIL_O, KC_ACU_O,
+        KC_GRV_E, KC_DIA_E, KC_CIR_E, KC_TIL_E, KC_ACU_E, XXXXXXX, XXXXXXX, KC_GRV_U, KC_DIA_U, KC_CIR_U, KC_TIL_U, KC_ACU_U,
+        KC_GRV_I, KC_DIA_I, KC_CIR_I, KC_TIL_I, KC_ACU_I, XXXXXXX, XXXXXXX, KC_GRV_Y, KC_DIA_Y, KC_CIR_Y, KC_TIL_Y, KC_ACU_Y,
+        XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  _______,  _______, _______, _______,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX
     )
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-  state = update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
-  switch (get_highest_layer(state)) {
-    case _LOWER:
-      rgblight_setrgb(0x7A, 0xFF, 0x00);
-      break;
-    case _RAISE:
-      rgblight_setrgb(0xBD, 0x00, 0xFF);
-      break;
-    case _ADJUST:
-      rgblight_setrgb(0xFF, 0x7A, 0x00);
-      break;
-    case _FN:
-      rgblight_setrgb(0x99, 0xF5, 0xFF);
-      break;
-    default:
-      rgblight_setrgb(RGB_OFF);
-      break;
-  }
-  return state;
+    state = update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+    switch (get_highest_layer(state)) {
+        case _LOWER:
+            rgblight_setrgb(0x7A, 0xFF, 0x00);
+            break;
+        case _RAISE:
+            rgblight_setrgb(0xBD, 0x00, 0xFF);
+            break;
+        case _ADJUST:
+            rgblight_setrgb(0xFF, 0x7A, 0x00);
+            break;
+        case _FN:
+            rgblight_setrgb(0x99, 0xF5, 0xFF);
+            break;
+        case _ACCENTS:
+            rgblight_setrgb(0xFF, 0xF5, 0x00);
+        default:
+            rgblight_setrgb(RGB_OFF);
+            break;
+    }
+    return state;
 }
 
 // Set initial light to be off
@@ -149,7 +161,7 @@ bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
         case KC_A ... KC_Z:
-        case KC_AE ... KC_AA:
+        case KC_AE ... KC_ACU_Y:
             add_weak_mods(MOD_BIT(KC_LSFT));
             return true;
 

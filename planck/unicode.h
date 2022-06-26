@@ -1,5 +1,4 @@
-#ifndef __UNICODE_H_
-#define __UNICODE_H_
+#pragma once
 
 enum unicode_names {
 
@@ -7,6 +6,38 @@ enum unicode_names {
     AE_L, AE_U,
     OE_L, OE_U,
     AA_L, AA_U,
+
+    // Accented vowels
+    GRV_A_L, GRV_A_U,
+    DIA_A_L, DIA_A_U,
+    CIR_A_L, CIR_A_U,
+    TIL_A_L, TIL_A_U,
+    ACU_A_L, ACU_A_U,
+    GRV_E_L, GRV_E_U,
+    DIA_E_L, DIA_E_U,
+    CIR_E_L, CIR_E_U,
+    TIL_E_L, TIL_E_U,
+    ACU_E_L, ACU_E_U,
+    GRV_I_L, GRV_I_U,
+    DIA_I_L, DIA_I_U,
+    CIR_I_L, CIR_I_U,
+    TIL_I_L, TIL_I_U,
+    ACU_I_L, ACU_I_U,
+    GRV_O_L, GRV_O_U,
+    DIA_O_L, DIA_O_U,
+    CIR_O_L, CIR_O_U,
+    TIL_O_L, TIL_O_U,
+    ACU_O_L, ACU_O_U,
+    GRV_U_L, GRV_U_U,
+    DIA_U_L, DIA_U_U,
+    CIR_U_L, CIR_U_U,
+    TIL_U_L, TIL_U_U,
+    ACU_U_L, ACU_U_U,
+    GRV_Y_L, GRV_Y_U,
+    DIA_Y_L, DIA_Y_U,
+    CIR_Y_L, CIR_Y_U,
+    TIL_Y_L, TIL_Y_U,
+    ACU_Y_L, ACU_Y_U,
 
     // Greek letters
     ALPHA_L,   ALPHA_U,
@@ -119,6 +150,38 @@ const uint32_t PROGMEM unicode_map[] = {
     [OE_L] = L'ø', [OE_U] = L'Ø',
     [AA_L] = L'å', [AA_U] = L'Å',
 
+    // Accented vowels
+    [GRV_A_L] = L'à', [GRV_A_U] = L'À',
+    [DIA_A_L] = L'ä', [DIA_A_U] = L'Ä',
+    [CIR_A_L] = L'â', [CIR_A_U] = L'Â',
+    [TIL_A_L] = L'ã', [TIL_A_U] = L'Ã',
+    [ACU_A_L] = L'á', [ACU_A_U] = L'Á',
+    [GRV_E_L] = L'è', [GRV_E_U] = L'È',
+    [DIA_E_L] = L'ë', [DIA_E_U] = L'Ë',
+    [CIR_E_L] = L'ê', [CIR_E_U] = L'Ê',
+    [TIL_E_L] = L'ẽ', [TIL_E_U] = L'Ẽ',
+    [ACU_E_L] = L'é', [ACU_E_U] = L'É',
+    [GRV_I_L] = L'ì', [GRV_I_U] = L'Ì',
+    [DIA_I_L] = L'ï', [DIA_I_U] = L'Ï',
+    [CIR_I_L] = L'î', [CIR_I_U] = L'Î',
+    [TIL_I_L] = L'ĩ', [TIL_I_U] = L'Ĩ',
+    [ACU_I_L] = L'í', [ACU_I_U] = L'Í',
+    [GRV_O_L] = L'ò', [GRV_O_U] = L'Ò',
+    [DIA_O_L] = L'ö', [DIA_O_U] = L'Ö',
+    [CIR_O_L] = L'ô', [CIR_O_U] = L'Ô',
+    [TIL_O_L] = L'õ', [TIL_O_U] = L'Õ',
+    [ACU_O_L] = L'ó', [ACU_O_U] = L'Ó',
+    [GRV_U_L] = L'ù', [GRV_U_U] = L'Ù',
+    [DIA_U_L] = L'ü', [DIA_U_U] = L'Ü',
+    [CIR_U_L] = L'û', [CIR_U_U] = L'Û',
+    [TIL_U_L] = L'ũ', [TIL_U_U] = L'Ũ',
+    [ACU_U_L] = L'ú', [ACU_U_U] = L'Ú',
+    [GRV_Y_L] = L'ỳ', [GRV_Y_U] = L'Ỳ',
+    [DIA_Y_L] = L'ÿ', [DIA_Y_U] = L'Ÿ',
+    [CIR_Y_L] = L'ŷ', [CIR_Y_U] = L'Ŷ',
+    [TIL_Y_L] = L'ỹ', [TIL_Y_U] = L'Ỹ',
+    [ACU_Y_L] = L'ý', [ACU_Y_U] = L'Ý',
+
     // Greek letters
     [ALPHA_L]   = L'α', [ALPHA_U]   = L'Α',
     [BETA_L]    = L'β', [BETA_U]    = L'Β',
@@ -226,6 +289,38 @@ const uint32_t PROGMEM unicode_map[] = {
 #define KC_AE      XP(AE_L,      AE_U)
 #define KC_OE      XP(OE_L,      OE_U)
 #define KC_AA      XP(AA_L,      AA_U)
+
+#define KC_GRV_A XP(GRV_A_L, GRV_A_U)
+#define KC_DIA_A XP(DIA_A_L, DIA_A_U)
+#define KC_CIR_A XP(CIR_A_L, CIR_A_U)
+#define KC_TIL_A XP(TIL_A_L, TIL_A_U)
+#define KC_ACU_A XP(ACU_A_L, ACU_A_U)
+#define KC_GRV_E XP(GRV_E_L, GRV_E_U)
+#define KC_DIA_E XP(DIA_E_L, DIA_E_U)
+#define KC_CIR_E XP(CIR_E_L, CIR_E_U)
+#define KC_TIL_E XP(TIL_E_L, TIL_E_U)
+#define KC_ACU_E XP(ACU_E_L, ACU_E_U)
+#define KC_GRV_I XP(GRV_I_L, GRV_I_U)
+#define KC_DIA_I XP(DIA_I_L, DIA_I_U)
+#define KC_CIR_I XP(CIR_I_L, CIR_I_U)
+#define KC_TIL_I XP(TIL_I_L, TIL_I_U)
+#define KC_ACU_I XP(ACU_I_L, ACU_I_U)
+#define KC_GRV_O XP(GRV_O_L, GRV_O_U)
+#define KC_DIA_O XP(DIA_O_L, DIA_O_U)
+#define KC_CIR_O XP(CIR_O_L, CIR_O_U)
+#define KC_TIL_O XP(TIL_O_L, TIL_O_U)
+#define KC_ACU_O XP(ACU_O_L, ACU_O_U)
+#define KC_GRV_U XP(GRV_U_L, GRV_U_U)
+#define KC_DIA_U XP(DIA_U_L, DIA_U_U)
+#define KC_CIR_U XP(CIR_U_L, CIR_U_U)
+#define KC_TIL_U XP(TIL_U_L, TIL_U_U)
+#define KC_ACU_U XP(ACU_U_L, ACU_U_U)
+#define KC_GRV_Y XP(GRV_Y_L, GRV_Y_U)
+#define KC_DIA_Y XP(DIA_Y_L, DIA_Y_U)
+#define KC_CIR_Y XP(CIR_Y_L, CIR_Y_U)
+#define KC_TIL_Y XP(TIL_Y_L, TIL_Y_U)
+#define KC_ACU_Y XP(ACU_Y_L, ACU_Y_U)
+
 #define KC_ALPHA   XP(ALPHA_L,   ALPHA_U)
 #define KC_BETA    XP(BETA_L,    BETA_U)
 #define KC_GAMMA   XP(GAMMA_L,   GAMMA_U)
@@ -325,5 +420,3 @@ const uint32_t PROGMEM unicode_map[] = {
 #define KC_NO_ENTRY       X(NO_ENTRY)
 #define KC_CHECK          X(CHECK)
 #define KC_B_BUTTON       X(B_BUTTON)
-
-#endif // __UNICODE_H_
