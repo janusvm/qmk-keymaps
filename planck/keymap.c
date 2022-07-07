@@ -8,7 +8,9 @@ enum planck_layers {
     _RAISE,
     _ADJUST,
     _FN,
-    _ACCENTS
+    _ACCENTS,
+    _SYMBOLS,
+    _EMOJI
 };
 
 // Layer keys
@@ -18,6 +20,8 @@ enum planck_layers {
 #define RAISE_ENT  LT(_RAISE, KC_ENT)
 #define FN_TAB     LT(_FN, KC_TAB)
 #define ACCENT_ESC LT(_ACCENTS, KC_ESC)
+#define SYMBOLS    OSL(_SYMBOLS)
+#define EMOJI      OSL(_EMOJI)
 
 // Combined keys
 #define C_Z C(KC_Z)
@@ -73,7 +77,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV_A, KC_DIA_A, KC_CIR_A, KC_TIL_A, KC_ACU_A, XXXXXXX, XXXXXXX, KC_GRV_O, KC_DIA_O, KC_CIR_O, KC_TIL_O, KC_ACU_O,
         KC_GRV_E, KC_DIA_E, KC_CIR_E, KC_TIL_E, KC_ACU_E, XXXXXXX, XXXXXXX, KC_GRV_U, KC_DIA_U, KC_CIR_U, KC_TIL_U, KC_ACU_U,
         KC_GRV_I, KC_DIA_I, KC_CIR_I, KC_TIL_I, KC_ACU_I, XXXXXXX, XXXXXXX, KC_GRV_Y, KC_DIA_Y, KC_CIR_Y, KC_TIL_Y, KC_ACU_Y,
-        XXXXXXX,  XXXXXXX,  XXXXXXX,  _______,  _______,  XXXXXXX, XXXXXXX, XXXXXXX,  _______,  XXXXXXX,  XXXXXXX,  XXXXXXX
+        XXXXXXX,  XXXXXXX,  XXXXXXX,  SYMBOLS,  EMOJI,    XXXXXXX, XXXXXXX, XXXXXXX,  _______,  XXXXXXX,  XXXXXXX,  XXXXXXX
+    ),
+
+    // SYMBOLS layer, for various unicode characters
+    [_SYMBOLS] = LAYOUT(
+        KC_HALF,        KC_SQUARED,      KC_INTEGRAL,  KC_DEGREES,    KC_BULLET,   XXXXXXX, XXXXXXX, KC_EURO,         KC_GBP,        KC_UP_ARROW,   KC_JPY,         KC_NEQ,
+        KC_INFTY,       KC_REGISTERED,   KC_SQRT,      KC_TRADEMARK,  KC_GRADIENT, XXXXXXX, XXXXXXX, KC_TIMES,        KC_LEFT_ARROW, KC_DOWN_ARROW, KC_RIGHT_ARROW, KC_PLUS_MINUS,
+        KC_SOLID_BLOCK, KC_MEDIUM_BLOCK, KC_COPYRIGHT, KC_PARTIAL,    KC_UNION,    XXXXXXX, XXXXXXX, KC_INTERSECTION, KC_NOT,        KC_EMPTY_SET,  KC_EN_DASH,     KC_EM_DASH,
+        XXXXXXX,        XXXXXXX,         XXXXXXX,      KC_ELEMENT_OF, KC_NO,       XXXXXXX, XXXXXXX, KC_CHECK_MARK,   KC_CROSS_MARK, XXXXXXX,       XXXXXXX,        XXXXXXX
+    ),
+
+    // EMOJI layer, for quickly accessing my favourite emoji
+    [_EMOJI] = LAYOUT(
+        KC_SMIRK,       KC_FLUSHED,    KC_WEARY,   KC_WINK,        KC_ROLLING_EYES,   XXXXXXX, XXXXXXX, KC_THINKING,    KC_SHUSH,    KC_OK_HAND, KC_EYES,  KC_SPARKLES,
+        KC_SWEAT_SMILE, KC_HEART_EYES, KC_SOB,     KC_WINK_KISS,   KC_RAISED_EYEBROW, XXXXXXX, XXXXXXX, KC_UPSIDE_DOWN, KC_GRIMACE,  KC_CLAP,    KC_BRAIN, KC_SWEAT,
+        KC_JOY,         KC_ZANY,       KC_PENSIVE, KC_WINK_TONGUE, KC_UNAMUSED,       XXXXXXX, XXXXXXX, KC_POOP,        KC_TRIUMPH,  KC_PRAY,    KC_FIRE,  KC_HEARTS,
+        XXXXXXX,        XXXXXXX,       XXXXXXX,    KC_B_BUTTON,    KC_NO,             XXXXXXX, XXXXXXX, KC_CHECK,       KC_NO_ENTRY, XXXXXXX,    XXXXXXX,  XXXXXXX
     )
 };
 
@@ -93,6 +113,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             rgblight_setrgb(0x99, 0xF5, 0xFF);
             break;
         case _ACCENTS:
+        case _SYMBOLS:
+        case _EMOJI:
             rgblight_setrgb(0xFF, 0xF5, 0x00);
             break;
         default:

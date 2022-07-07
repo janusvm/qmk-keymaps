@@ -97,6 +97,8 @@ enum unicode_names {
     NOT,
     BULLET,
     TIMES,
+    CHECK_MARK,
+    CROSS_MARK,
 
     // Emoji
     GRIN,
@@ -240,6 +242,8 @@ const uint32_t PROGMEM unicode_map[] = {
     [NOT]          = L'¬',
     [BULLET]       = L'•',
     [TIMES]        = L'×',
+    [CHECK_MARK]   = L'✓',
+    [CROSS_MARK]   = L'✗',
 
     // Emoji
     [GRIN]           = 0x1F604,  // 😄
@@ -377,6 +381,8 @@ const uint32_t PROGMEM unicode_map[] = {
 #define KC_NOT          X(NOT)
 #define KC_BULLET       X(BULLET)
 #define KC_TIMES        X(TIMES)
+#define KC_CHECK_MARK   X(CHECK_MARK)
+#define KC_CROSS_MARK   X(CROSS_MARK)
 
 #define KC_GRIN           X(GRIN)
 #define KC_SWEAT_SMILE    X(SWEAT_SMILE)
