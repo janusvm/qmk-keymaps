@@ -1,5 +1,5 @@
 #include QMK_KEYBOARD_H
-#include "unicode.h"
+#include <../unicode.h>
 
 // Layers
 enum planck_layers {
