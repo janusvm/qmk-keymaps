@@ -193,6 +193,7 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LOWER_SPC:
         case RAISE_BSPC:
+        case RAISE_ENT:
         case FN_TAB:
         case ACCENT_ESC:
             // Enable HOLD_ON_OTHER_KEY_PRESS for just the thumb keys
