@@ -1,34 +1,5 @@
 #include QMK_KEYBOARD_H
-#include <../unicode.h>
-
-// Layers
-enum ferris_layers {
-    _COLEMAK_DH,
-    _LOWER,
-    _RAISE,
-    _ADJUST,
-    _FN,
-    _ACCENTS,
-    _SYMBOLS,
-    _EMOJI
-};
-
-// Layer keys
-#define FN_COMM    LT(_FN, KC_COMM)
-#define LOWER_SPC  LT(_LOWER, KC_SPC)
-#define RAISE_BSPC LT(_RAISE, KC_BSPC)
-#define RAISE_ENT  LT(_RAISE, KC_ENT)
-#define FN_TAB     LT(_FN, KC_TAB)
-#define ACCENT_ESC LT(_ACCENTS, KC_ESC)
-#define SYMBOLS    OSL(_SYMBOLS)
-#define EMOJI      OSL(_EMOJI)
-
-// Combined keys
-#define C_Z C(KC_Z)
-#define C_X C(KC_X)
-#define C_C C(KC_C)
-#define C_V C(KC_V)
-#define C_S C(KC_S)
+#include "janusvm.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -96,3 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                    KC_B_BUTTON,    KC_NO,                      KC_CHECK,       KC_NO_ENTRY
     )
 };
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+}
