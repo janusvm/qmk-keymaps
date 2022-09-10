@@ -3,7 +3,7 @@
 
 // Layers
 enum kbd67_layers {
-  _COLEMAK_DH,
+  _COLEMAK,
   _QWERTY,
   _SYMBOLS,
   _FN
@@ -20,7 +20,7 @@ enum kbd67_layers {
 #define MY_EURO ALGR(DK_E)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_COLEMAK_DH] = LAYOUT_65_iso_split_space(
+    [_COLEMAK] = LAYOUT_65_iso_split_space(
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    DK_PLUS, DK_ACUT, /*****/  KC_DEL,  KC_HOME,
         KC_TAB,  /*****/  KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,    DK_DIAE, KC_J,    KC_L,    KC_U,    KC_Y,    DK_AE,   DK_ARNG, /*****/  KC_PGUP,
         OSMLCTL, /*****/  KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    DK_QUOT, KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    DK_OSTR, KC_ENT,  KC_PGDN,
