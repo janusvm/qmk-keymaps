@@ -1,19 +1,19 @@
 #include "janusvm.h"
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  switch (keycode) {
-    case QWERTY:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_QWERTY);
-      }
-      return false;
-    case COLEMAK:
-      if (record->event.pressed) {
-        set_single_persistent_default_layer(_COLEMAK);
-      }
-      return false;
-  }
-  return true;
+    switch (keycode) {
+        case QWERTY:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_QWERTY);
+            }
+            return false;
+        case COLEMAK:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_COLEMAK);
+            }
+            return false;
+    }
+    return true;
 }
 
 uint16_t get_tapping_term_per_key(uint16_t keycode, keyrecord_t *record) {
