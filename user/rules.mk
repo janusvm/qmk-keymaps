@@ -20,5 +20,6 @@ SPACE_CADET_ENABLE = no
 AUDIO_ENABLE      ?= no
 BACKLIGHT_ENABLE  ?= no
 RGBLIGHT_ENABLE   ?= no
+RGB_MATRIX_ENABLE ?= no
 SPLIT_KEYBOARD    ?= no
 UNICODEMAP_ENABLE ?= no  # Unicode support up to code point 0x10FFFF
