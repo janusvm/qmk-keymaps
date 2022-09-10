@@ -4,7 +4,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // COLEMAK-DH layer, based on ANSI Colemak-DHm
-    [_COLEMAK_DH] = LAYOUT(
+    [_COLEMAK] = LAYOUT(
         KC_Q,        KC_W,        KC_F,        KC_P,        KC_B,               KC_J,       KC_L,        KC_U,        KC_Y,        KC_DEL,
         GUI_T(KC_A), ALT_T(KC_R), CTL_T(KC_S), SFT_T(KC_T), KC_G,               KC_M,       SFT_T(KC_N), CTL_T(KC_E), ALT_T(KC_I), GUI_T(KC_O),
         KC_Z,        KC_X,        KC_C,        KC_D,        KC_V,               KC_K,       KC_H,        KC_COMM,     KC_DOT,      KC_SLSH,
