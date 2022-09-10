@@ -11,3 +11,9 @@
 #define UNICODE_SONG_BSD  SONG(TERMINAL_SOUND)
 #define UNICODE_SONG_WIN  SONG(UNICODE_WINDOWS)
 #define UNICODE_SONG_WINC SONG(UNICODE_WINDOWS)
+
+// Unicode characters to include
+#define UC_DANISH
+#define UC_ACCENTS
+#define UC_SYMBOLS
+#define UC_EMOJI
