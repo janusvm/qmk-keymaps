@@ -1,5 +1,21 @@
 #include "janusvm.h"
 
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case QWERTY:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_QWERTY);
+      }
+      return false;
+    case COLEMAK:
+      if (record->event.pressed) {
+        set_single_persistent_default_layer(_COLEMAK);
+      }
+      return false;
+  }
+  return true;
+}
+
 uint16_t get_tapping_term_per_key(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LOWER_SPC:
@@ -72,11 +88,20 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+#ifdef CAPS_WORDS_ENABLE
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
         case KC_A ... KC_Z:
-        case KC_AE ... KC_ACU_Y:
+#ifdef UC_DANISH
+        case KC_AE ... KC_AA:
+#endif // UC_DANISH
+#ifdef UC_ACCENTS
+        case KC_GRV_A ... KC_ACU_Y:
+#endif // UC_ACCENTS
+#ifdef UC_GREEK
+        case KC_ALPHA ... KC_OMEGA:
+#endif // UC_GREEK
             add_weak_mods(MOD_BIT(KC_LSFT));
             return true;
 
@@ -92,3 +117,4 @@ bool caps_word_press_user(uint16_t keycode) {
             return false;  // Deactivate Caps Word.
     }
 }
+#endif // CAPS_WORDS_ENABLE

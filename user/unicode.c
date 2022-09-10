@@ -1,12 +1,16 @@
 #include "unicode.h"
 
+#ifdef UNICODEMAP_ENABLE
 const uint32_t PROGMEM unicode_map[] = {
 
+#ifdef UC_DANISH
     // Danish letters
     [AE_L] = L'æ', [AE_U] = L'Æ',
     [OE_L] = L'ø', [OE_U] = L'Ø',
     [AA_L] = L'å', [AA_U] = L'Å',
+#endif // UC_DANISH
 
+#ifdef UC_ACCENTS
     // Accented vowels
     [GRV_A_L] = L'à', [GRV_A_U] = L'À',
     [DIA_A_L] = L'ä', [DIA_A_U] = L'Ä',
@@ -38,7 +42,9 @@ const uint32_t PROGMEM unicode_map[] = {
     [CIR_Y_L] = L'ŷ', [CIR_Y_U] = L'Ŷ',
     [TIL_Y_L] = L'ỹ', [TIL_Y_U] = L'Ỹ',
     [ACU_Y_L] = L'ý', [ACU_Y_U] = L'Ý',
+#endif // UC_ACCENTS
 
+#ifdef UC_GREEK
     // Greek letters
     [ALPHA_L]   = L'α', [ALPHA_U]   = L'Α',
     [BETA_L]    = L'β', [BETA_U]    = L'Β',
@@ -64,7 +70,9 @@ const uint32_t PROGMEM unicode_map[] = {
     [CHI_L]     = L'χ', [CHI_U]     = L'Χ',
     [PSI_L]     = L'ψ', [PSI_U]     = L'Ψ',
     [OMEGA_L]   = L'ω', [OMEGA_U]   = L'Ω',
+#endif // UC_GREEK
 
+#ifdef UC_SYMBOLS
     // Miscellaneous symbols
     [HALF]         = L'½',
     [SQUARED]      = L'²',
@@ -99,7 +107,9 @@ const uint32_t PROGMEM unicode_map[] = {
     [TIMES]        = L'×',
     [CHECK_MARK]   = L'✓',
     [CROSS_MARK]   = L'✗',
+#endif // UC_SYMBOLS
 
+#ifdef UC_EMOJI
     // Emoji
     [GRIN]           = 0x1F604,  // 😄
     [SWEAT_SMILE]    = 0x1F605,  // 😅
@@ -143,4 +153,6 @@ const uint32_t PROGMEM unicode_map[] = {
     [NO_ENTRY]       = 0x26d4,   // ⛔
     [CHECK]          = 0x2705,   // ✅
     [B_BUTTON]       = 0x1f171   // 🅱
+#endif // UC_EMOJI
 };
+#endif // UNICODEMAP_ENABLE

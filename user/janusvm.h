@@ -1,8 +1,10 @@
 #pragma once
+#include QMK_KEYBOARD_H
 #include "unicode.h"
 
 enum janusvm_layers {
-    _COLEMAK_DH,
+    _QWERTY,
+    _COLEMAK,
     _LOWER,
     _RAISE,
     _ADJUST,
@@ -12,15 +14,24 @@ enum janusvm_layers {
     _EMOJI
 };
 
+enum janusvm_keycodes {
+    QWERTY = SAFE_RANGE,
+    COLEMAK
+};
+
 // Layer keys
+#define LOWER      MO(_LOWER)
+#define RAISE      MO(_RAISE)
+#define FN         MO(_FN)
+#define ACCENTS    OSL(_ACCENTS)
+#define SYMBOLS    OSL(_SYMBOLS)
+#define EMOJI      OSL(_EMOJI)
 #define FN_COMM    LT(_FN, KC_COMM)
 #define LOWER_SPC  LT(_LOWER, KC_SPC)
 #define RAISE_BSPC LT(_RAISE, KC_BSPC)
 #define RAISE_ENT  LT(_RAISE, KC_ENT)
 #define FN_TAB     LT(_FN, KC_TAB)
 #define ACCENT_ESC LT(_ACCENTS, KC_ESC)
-#define SYMBOLS    OSL(_SYMBOLS)
-#define EMOJI      OSL(_EMOJI)
 
 // Combined keys
 #define C_Z C(KC_Z)

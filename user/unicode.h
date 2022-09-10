@@ -1,13 +1,17 @@
 #pragma once
 #include QMK_KEYBOARD_H
 
+#ifdef UNICODEMAP_ENABLE
 enum unicode_names {
 
+#ifdef UC_DANISH
     //  Danish letters
     AE_L, AE_U,
     OE_L, OE_U,
     AA_L, AA_U,
+#endif // UC_DANISH
 
+#ifdef UC_ACCENTS
     // Accented vowels
     GRV_A_L, GRV_A_U,
     DIA_A_L, DIA_A_U,
@@ -39,7 +43,9 @@ enum unicode_names {
     CIR_Y_L, CIR_Y_U,
     TIL_Y_L, TIL_Y_U,
     ACU_Y_L, ACU_Y_U,
+#endif // UC_ACCENTS
 
+#ifdef UC_GREEK
     // Greek letters
     ALPHA_L,   ALPHA_U,
     BETA_L,    BETA_U,
@@ -65,7 +71,9 @@ enum unicode_names {
     CHI_L,     CHI_U,
     PSI_L,     PSI_U,
     OMEGA_L,   OMEGA_U,
+#endif // UC_GREEK
 
+#ifdef UC_SYMBOLS
     // Miscellaneous symbols
     HALF,
     SQUARED,
@@ -100,7 +108,9 @@ enum unicode_names {
     TIMES,
     CHECK_MARK,
     CROSS_MARK,
+#endif // UC_SYMBOLS
 
+#ifdef UC_EMOJI
     // Emoji
     GRIN,
     SWEAT_SMILE,
@@ -144,12 +154,16 @@ enum unicode_names {
     NO_ENTRY,
     CHECK,
     B_BUTTON
+#endif // UC_EMOJI
 };
 
-#define KC_AE      XP(AE_L,      AE_U)
-#define KC_OE      XP(OE_L,      OE_U)
-#define KC_AA      XP(AA_L,      AA_U)
+#ifdef UC_DANISH
+#define KC_AE XP(AE_L, AE_U)
+#define KC_OE XP(OE_L, OE_U)
+#define KC_AA XP(AA_L, AA_U)
+#endif // UC_DANISH
 
+#ifdef UC_ACCENTS
 #define KC_GRV_A XP(GRV_A_L, GRV_A_U)
 #define KC_DIA_A XP(DIA_A_L, DIA_A_U)
 #define KC_CIR_A XP(CIR_A_L, CIR_A_U)
@@ -180,7 +194,9 @@ enum unicode_names {
 #define KC_CIR_Y XP(CIR_Y_L, CIR_Y_U)
 #define KC_TIL_Y XP(TIL_Y_L, TIL_Y_U)
 #define KC_ACU_Y XP(ACU_Y_L, ACU_Y_U)
+#endif // UC_ACCENTS
 
+#ifdef UC_GREEK
 #define KC_ALPHA   XP(ALPHA_L,   ALPHA_U)
 #define KC_BETA    XP(BETA_L,    BETA_U)
 #define KC_GAMMA   XP(GAMMA_L,   GAMMA_U)
@@ -205,7 +221,9 @@ enum unicode_names {
 #define KC_CHI     XP(CHI_L,     CHI_U)
 #define KC_PSI     XP(PSI_L,     PSI_U)
 #define KC_OMEGA   XP(OMEGA_L,   OMEGA_U)
+#endif // UC_GREEK
 
+#ifdef UC_SYMBOLS
 #define KC_HALF         X(HALF)
 #define KC_SQUARED      X(SQUARED)
 #define KC_EURO         X(EURO)
@@ -239,7 +257,9 @@ enum unicode_names {
 #define KC_TIMES        X(TIMES)
 #define KC_CHECK_MARK   X(CHECK_MARK)
 #define KC_CROSS_MARK   X(CROSS_MARK)
+#endif // UC_SYMBOLS
 
+#ifdef UC_EMOJI
 #define KC_GRIN           X(GRIN)
 #define KC_SWEAT_SMILE    X(SWEAT_SMILE)
 #define KC_JOY            X(JOY)
@@ -282,3 +302,5 @@ enum unicode_names {
 #define KC_NO_ENTRY       X(NO_ENTRY)
 #define KC_CHECK          X(CHECK)
 #define KC_B_BUTTON       X(B_BUTTON)
+#endif // UC_EMOJI
+#endif // UNICODEMAP_ENABLE
