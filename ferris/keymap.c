@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "janusvm.h"
+#include "unicode.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 

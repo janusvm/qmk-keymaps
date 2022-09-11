@@ -1,4 +1,5 @@
 #pragma once
+#include "rgb_matrix_config.h"
 
 // Disable some unnecessary features
 #undef LOCKING_SUPPORT_ENABLE

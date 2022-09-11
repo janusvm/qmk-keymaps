@@ -1,7 +1,5 @@
 #pragma once
 #include QMK_KEYBOARD_H
-#include "unicode.h"
-#include "rgb.h"
 
 enum janusvm_layers {
     _QWERTY,
@@ -41,3 +39,5 @@ enum janusvm_keycodes {
 #define C_V C(KC_V)
 #define C_S C(KC_S)
 
+// Other keycodes
+#define CTL_CAPS CTL_T(KC_CAPS)

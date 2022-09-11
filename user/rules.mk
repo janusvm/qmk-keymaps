@@ -1,5 +1,4 @@
 SRC += janusvm.c
-SRC += unicode.c
 
 BOOTMAGIC_ENABLE   = yes # Enable resetting by holding the (0,0) key while plugging in
 CAPS_WORD_ENABLE   = yes # Enable temporary caps key
@@ -23,3 +22,8 @@ RGBLIGHT_ENABLE   ?= no
 RGB_MATRIX_ENABLE ?= no
 SPLIT_KEYBOARD    ?= no
 UNICODEMAP_ENABLE ?= no  # Unicode support up to code point 0x10FFFF
+VIA_ENABLE        ?= no
+
+ifeq ($(strip $(UNICODEMAP_ENABLE)), yes)
+	SRC += unicode.c
+endif
