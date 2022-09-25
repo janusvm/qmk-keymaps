@@ -1,4 +1,7 @@
 #include "janusvm.h"
+#ifdef DK_MODE_ENABLE
+#include "keymap_danish.h"
+#endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -88,11 +91,16 @@ bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-#ifdef CAPS_WORDS_ENABLE
+#ifdef CAPS_WORD_ENABLE
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
         // Keycodes that continue Caps Word, with shift applied.
         case KC_A ... KC_Z:
+#ifdef DK_MODE_ENABLE
+        case DK_AE:
+        case DK_OSTR:
+        case DK_ARNG:
+#endif
 #ifdef UC_DANISH
         case KC_AE ... KC_AA:
 #endif // UC_DANISH
@@ -109,12 +117,19 @@ bool caps_word_press_user(uint16_t keycode) {
         case KC_1 ... KC_0:
         case KC_BSPC:
         case KC_DEL:
+        case KC_LSFT:
+        case KC_RSFT:
+#ifdef DK_MODE_ENABLE
+        case DK_MINS:
+        case DK_UNDS:
+#else
         case KC_MINS:
         case KC_UNDS:
+#endif // DK_MODE_ENABLE
             return true;
 
         default:
             return false;  // Deactivate Caps Word.
     }
 }
-#endif // CAPS_WORDS_ENABLE
+#endif // CAPS_WORD_ENABLE

@@ -27,3 +27,9 @@ VIA_ENABLE        ?= no
 ifeq ($(strip $(UNICODEMAP_ENABLE)), yes)
 	SRC += unicode.c
 endif
+
+# Toggle certain features based on whether the keymap is compiled to be used with
+# a Danish system keyboard layout or a US English one.
+ifeq ($(strip $(DK_MODE_ENABLE)), yes)
+	OPT_DEFS += -DDK_MODE_ENABLE
+endif

@@ -1,5 +1,6 @@
 #pragma once
 #include QMK_KEYBOARD_H
+#include "unicode.h"
 
 enum janusvm_layers {
     _QWERTY,
