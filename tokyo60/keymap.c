@@ -37,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_GRV_A, KC_DIA_A, KC_CIR_A, KC_TIL_A, KC_ACU_A, KC_GRV_O, KC_DIA_O, KC_CIR_O, KC_TIL_O, KC_ACU_O, KC_AE,   KC_AA,   /******/ _______,
         _______, KC_GRV_E, KC_DIA_E, KC_CIR_E, KC_TIL_E, KC_ACU_E, KC_GRV_U, KC_DIA_U, KC_CIR_U, KC_TIL_U, KC_ACU_U, KC_OE,   /******/ /******/ _______,
         _______, KC_GRV_I, KC_DIA_I, KC_CIR_I, KC_TIL_I, KC_ACU_I, KC_GRV_Y, KC_DIA_Y, KC_CIR_Y, KC_TIL_Y, KC_ACU_Y, /******/ /******/ _______, _______,
-        /******/ /******/  _______,  _______,  /******/  /******/  /******/  _______,  /******/  /******/  /******/  _______, _______  /******/ /******/
+        /******/ /******/  _______,  _______,  /******/  /******/  /******/  _______,  /******/  /******/  /******/  _______, KC_RALT  /******/ /******/
     )
 
 };
