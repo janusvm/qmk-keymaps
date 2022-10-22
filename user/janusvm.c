@@ -26,6 +26,7 @@ uint16_t get_tapping_term_per_key(uint16_t keycode, keyrecord_t *record) {
         case RAISE_ENT:
         case FN_TAB:
         case ACCENT_ESC:
+        case ACCENT_TAB:
             return 200;
         case SFT_T(KC_T):
         case SFT_T(KC_N):
@@ -55,6 +56,7 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        // Enable PERMISSIVE_HOLD for thumb, index, and long finger keys on ortho keymaps
         case LOWER_SPC:
         case RAISE_BSPC:
         case RAISE_ENT:
@@ -70,7 +72,8 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
         case CTL_T(KC_8):
         case CTL_T(KC_F8):
         case CTL_T(KC_P5):
-            // Enable PERMISSIVE_HOLD for thumb, index, and long finger keys
+        // Keys for other keymaps
+        case ACCENT_TAB:
             return true;
         default:
             return false;
@@ -79,12 +82,14 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
 
 bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
+        // Enable HOLD_ON_OTHER_KEY_PRESS for just the thumb keys on ortho keymaps
         case LOWER_SPC:
         case RAISE_BSPC:
         case RAISE_ENT:
         case FN_TAB:
         case ACCENT_ESC:
-            // Enable HOLD_ON_OTHER_KEY_PRESS for just the thumb keys
+        // Keys for other keymaps
+        case ACCENT_TAB:
             return true;
         default:
             return false;

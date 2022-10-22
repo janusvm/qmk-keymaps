@@ -32,6 +32,7 @@ enum janusvm_keycodes {
 #define RAISE_ENT  LT(_RAISE, KC_ENT)
 #define FN_TAB     LT(_FN, KC_TAB)
 #define ACCENT_ESC LT(_ACCENTS, KC_ESC)
+#define ACCENT_TAB LT(_ACCENTS, KC_TAB)
 
 // Combined keys
 #define C_Z C(KC_Z)
